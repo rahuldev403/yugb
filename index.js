@@ -1,9 +1,10 @@
+#!/usr/bin/env node
 import "dotenv/config";
 import inquirer from "inquirer";
-import { getLookalikes } from "./lib/ocean";
-import { getDecisionMakers } from "./lib/prospeo";
-import { resolveEmails } from "./lib/eazyreach";
-import { sendOutreach } from "./lib/brevo";
+import { getLookalikes } from "./lib/ocean.js";
+import { getDecisionMakers } from "./lib/prospeo.js";
+import { resolveEmails } from "./lib/eazyreach.js";
+import { sendOutreach } from "./lib/brevo.js";
 
 async function run() {
   try {
@@ -11,12 +12,12 @@ async function run() {
       {
         type: "input",
         name: "seed",
-        message: "Enter the seed domain (e.g., target.com)",
+        message: "Enter the seed domain (e.g., target.com):",
         validate: (input) => (input ? true : "Domain is required"),
       },
     ]);
 
-    console.log(`\n Firing pipline for: ${seed}\n`);
+    console.log(`\n Firing pipeline for: ${seed}\n`);
 
     // Stage 1 -> Stage 2 -> Stage 3
     const domains = await getLookalikes(seed);
@@ -32,7 +33,7 @@ async function run() {
       {
         type: "confirm",
         name: "confirm",
-        message: `Fire personailzed emails to these ${verifiedContacts.length} verfied contacts?`,
+        message: `Fire personalized emails to these ${verifiedContacts.length} verified contacts?`,
         default: false,
       },
     ]);
