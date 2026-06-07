@@ -1,5 +1,5 @@
 {
-  "name": "yugb",
+  "name": "v-labs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,13 @@
   "dependencies": {
     "@getbrevo/brevo": "^5.0.4",
     "axios": "^1.17.0",
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "cli-table3": "^0.6.5",
     "dotenv": "^17.4.2",
-    "inquirer": "^14.0.2"
+    "figlet": "^1.11.0",
+    "gradient-string": "^3.0.0",
+    "inquirer": "^14.0.2",
+    "ora": "^9.4.0"
   }
 }
